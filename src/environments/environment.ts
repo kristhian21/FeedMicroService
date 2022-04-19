@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   UserPoolId: 'us-east-1_HZgWLmH9x',
-  ClientId: 'vgqgpdduopvfdrdbbhh03jd22'
+  ClientId: 'vgqgpdduopvfdrdbbhh03jd22',
+  springBoot: 'http://localhost:8090/stream'
 };
 
 /*

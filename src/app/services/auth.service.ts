@@ -27,4 +27,13 @@ export class AuthService {
     }
     return auth;
   }
+
+  getToken(): string{
+    for (let i = 0; i < localStorage.length; i++) {
+      if (localStorage.key(i).endsWith('accessToken') && localStorage.key(i).includes(environment.ClientId)) {
+        return localStorage.getItem(localStorage.key(i));
+      }
+    }
+    return null;
+  }
 }

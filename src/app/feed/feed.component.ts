@@ -10,10 +10,11 @@ import { environment } from 'src/environments/environment';
 })
 export class FeedComponent implements OnInit {
 
+  attributes: CognitoUserAttribute[] = [];
   poolData = {
     UserPoolId: environment.UserPoolId, // Your user pool id here
     ClientId: environment.ClientId, // Your client id here
-  }; 
+  };
 
   constructor(
     private router: Router
@@ -27,6 +28,25 @@ export class FeedComponent implements OnInit {
     var currentUser = userPool.getCurrentUser();
     currentUser.signOut();
     this.router.navigate(['']);
+  }
+
+  loadAttr(): void {
+    var userPool = new CognitoUserPool(this.poolData);
+    var currentUser = userPool.getCurrentUser();
+    currentUser.getSession((err: any, session: any) => {
+      if (err) {
+        alert(err.message || JSON.stringify(err));
+        return;
+      }
+      currentUser.getUserAttributes((err: any, result: any) => {
+        if (err) {
+          alert(err.message || JSON.stringify(err));
+          return;
+        }
+        this.attributes = result;
+        this.attributes.forEach((attr: CognitoUserAttribute) => console.log(attr.Name + ' = ' + attr.Value));
+      });
+    });
   }
 
 }

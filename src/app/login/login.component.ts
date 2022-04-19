@@ -38,14 +38,33 @@ export class LoginComponent implements OnInit {
       Username: this.email,
       Password: this.password
     };
+    var attributes: CognitoUserAttribute[] = [];
     var authDetails = new AuthenticationDetails(authData);
     // Login
     cognitoUser.authenticateUser(authDetails, {
       onSuccess: (result) => {
-        console.log("Token: " + result.getAccessToken().getJwtToken())
+        console.log("Token: " + result.getAccessToken().getJwtToken());
+        cognitoUser.getSession((err: any, session: any) => {
+          if (err) {
+            alert(err.message || JSON.stringify(err));
+            return;
+          }
+          cognitoUser.getUserAttributes((err: any, result: any) => {
+            if (err) {
+              alert(err.message || JSON.stringify(err));
+              return;
+            }
+            attributes = result;
+            attributes.forEach((attr: CognitoUserAttribute) => console.log(attr.Name + ' = ' + attr.Value));
+            attributes.forEach((attr: CognitoUserAttribute) => {
+              if(attr.Name == 'nickname'){
+                localStorage.setItem('user_nickname', attr.Value);              }
+            });
+          });
+        });
         this.router.navigate(['/home']);
       },
-      onFailure: (error) =>{
+      onFailure: (error) => {
         alert(error.message || JSON.stringify(error));
       }
     });

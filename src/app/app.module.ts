@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedComponent } from './feed/feed.component';
 import { MenuComponent } from './menu/menu.component';  
+import { interceptorSpringProvider } from './interceptors/api-rest.interceptor';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { MenuComponent } from './menu/menu.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [interceptorSpringProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
