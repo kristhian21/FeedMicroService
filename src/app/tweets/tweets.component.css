@@ -1,13 +1,20 @@
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-.feed {
+.subcontainer{
     background-color: #082040;
     border-radius: 10px;
     padding: 2%;
     width: 60%;
+    margin-bottom: 2%;
+}
+
+input {
+    width: 100%;
 }
 
 .title {
