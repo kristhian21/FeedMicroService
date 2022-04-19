@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationDetails, CognitoUser, CognitoUserPool } from 'amazon-cognito-identity-js';
+import { AuthenticationDetails, CognitoUser, CognitoUserAttribute, CognitoUserPool } from 'amazon-cognito-identity-js';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -50,5 +50,4 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-
 }
