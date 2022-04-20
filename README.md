@@ -16,10 +16,8 @@ El get service y post service se manejaron en springboot utilizando JPA, el prim
 
 ## Video del funcionamiento
 
-Par adescargar el video, ingrese al siguiente link y oprima la opción *view raw*  [Video Funcionamiento]("https://github.com/kristhian21/FeedMicroService/blob/main/img/VideoArep.mp4")
-<iframe width="600" height = "420"
-src="https://youtu.be/nVsbUqtAl7A">
-</iframe>
+Par adescargar el video, ingrese al siguiente link y oprima la opción *view raw*  [Video Funcionamiento]("https://youtu.be/nVsbUqtAl7A")
+
 
 
 
