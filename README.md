@@ -1,5 +1,12 @@
 # Twitter Clone 
 
+## Autores
+
+### Maria Jose Torres Nieves
+### Juan Sebastian Ospina
+### Kristhian Segura
+
+
 Este proyecto tiene como finalidad ofrecer un servicio similar a Twitter en el que los usuarios podrán iniciar sesión y realizar publicaciones en el hilo principal dividido en microservicios que fueron desplegados en AWS; estando los servicios Cognito Gateway, GET y POST Service en EC2 y el Frontend en S3.
 
 ## Enlaces a los otros servicios
