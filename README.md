@@ -16,8 +16,7 @@ El get service y post service se manejaron en springboot utilizando JPA, el prim
 
 ## Video del funcionamiento
 
-Puede ver el video en youtube haciendo  [CLick aqui]("https://youtu.be/nVsbUqtAl7A")
-o con el siguente link https://youtu.be/nVsbUqtAl7A
+Puede ver el video en youtube  https://youtu.be/nVsbUqtAl7A
 
 
 
