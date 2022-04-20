@@ -20,6 +20,8 @@ class Publicacion {
 export class TweetsComponent implements OnInit {
   @ViewChild("inputBox") inputField:any;
 
+  publicaciones: Publicacion[];
+
   constructor(
     private apiRestService: ApiRestService
   ) { }
@@ -36,7 +38,15 @@ export class TweetsComponent implements OnInit {
       console.log(response);
       alert("Se ha enviado el Tweet!");
       this.inputField.nativeElement.value = '';
-    })
+      this.getPublications();
+    });
+  }
+
+  getPublications(): void{
+    this.apiRestService.getPublications().subscribe(response => {
+      console.log(response);
+      this.publicaciones = Object.values(response);
+    });
   }
 
 }

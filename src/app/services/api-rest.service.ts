@@ -19,4 +19,9 @@ export class ApiRestService {
   public postPublicacion(body: any){
     return this.httpClient.post(this.springURL, body);
   }
+
+  //GET
+  public getPublications(){
+    return this.httpClient.get(this.springURL);
+  }
 }
